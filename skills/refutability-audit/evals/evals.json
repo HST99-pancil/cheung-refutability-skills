@@ -1,0 +1,57 @@
+{
+  "skill_name": "refutability-audit",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我下一篇《學說經濟》專欄想論證：馬來西亞的年輕人越來越不願意進工廠工作，是因為社會地位觀念變了，藍領工作被看低。我覺得這說法很有道理，但又怕被人說是空話。幫我看看這論點站不站得住，能不能驗證，如果不行，怎樣改寫才能讓讀者可以檢驗。",
+      "expected_output": "A Traditional Chinese audit that separates theory from implication, flags 社會地位觀念 as unobservable (非事實) and vague, names an observable constraint change (e.g. relative wage gap between factory and service jobs, SPM pass-rate shifts, foreign-worker quota changes) that could drive the outcome, writes a single refuting observation, runs the five disqualifiers, checks inference form, gives a verdict, and delivers a rewritten thesis no longer than the original plus a short test paragraph.",
+      "files": [],
+      "expectations": [
+        "Response is written in Chinese",
+        "Explicitly separates the abstract theory from a testable implication (含意), labelling both",
+        "Flags 社會地位觀念 / 藍領被看低 as unobservable or vague and supplies an observable proxy or replaces it",
+        "Names at least one observable constraint change (局限條件) that could drive the outcome, e.g. wage gap, foreign-worker supply, education expansion",
+        "States one concrete refuting observation in the form '若甲出現而乙不出現，則推翻'",
+        "Runs all five disqualifiers by name: 套套邏輯, 模糊不清, 互相矛盾, 非事實, 無限制",
+        "Gives an explicit verdict from the four categories (如述可驗證 / 改述後可驗證 / 如述不可驗證 / 已被事實推翻)",
+        "Provides a rewritten thesis no longer than the user's original sentence, or, if longer, states in one line what the extra words buy",
+        "Provides a test paragraph of at most four sentences that a reader could act on",
+        "Treats the question as testability, not truth: does not declare the user's claim false or the user wrong"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I'm reading a policy brief that argues: \"Companies that adopt ESG reporting become more profitable, because stakeholders reward transparency. Evidence: the top 100 ESG reporters in Southeast Asia outperformed the regional index by 3% over 2019-2024.\" Is this argument actually testable? What would it take to refute it, and does the evidence they cite do the job?",
+      "expected_output": "An English audit that identifies the claim as causal, separates theory (stakeholders reward transparency) from implication (ESG adoption raises profitability), flags the cited evidence as affirming the consequent / confirmation-as-proof and as failing to hold conditions constant (selection: profitable firms adopt ESG), names the constraint change (adoption event) and the conditions needed, writes a refuting observation, runs the five disqualifiers, and gives a verdict with the rescue priced.",
+      "files": [],
+      "expectations": [
+        "Separates theory (stakeholders reward transparency) from implication (adopting ESG reporting raises profitability)",
+        "Identifies the cited outperformance as confirmation taken as proof (affirming the consequent) and/or as failing to hold conditions constant (selection: profitable firms adopt ESG)",
+        "Names the constraint change (adoption of ESG reporting) and at least one condition that must hold for the implication to be tested",
+        "States one concrete refuting observation",
+        "Runs all five disqualifiers by name: tautology, vagueness, inconsistency, non-fact, unlimited",
+        "Marks 'stakeholders reward transparency' or 'reward' as unobservable and names a proxy",
+        "Gives an explicit verdict from the four categories",
+        "Prices the rescue: says what generality the restated claim loses",
+        "Directly answers the user's question 'does the evidence do the job' with a clear no and the reason"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Someone on a forum said rent control can't be shown to cause housing shortages because 'landlords aren't the profit-maximizing robots economists assume, most of them just want steady tenants'. Another person replied that rent control obviously causes shortages OR conversion to condos OR neglect OR key money OR discrimination, so it's always bad. Can you sort out who's right here using Cheung's method? I want to use this in a column.",
+      "expected_output": "An English audit that identifies the first speaker's move as denying the antecedent (assumption realism does not bear on whether the implication holds; petrol-station logic), identifies the second speaker's prediction set as unlimited (Cheung's price-control case) and shows how to constrain it (which substitute appears under which transaction-cost condition), writes a refuting observation, runs the disqualifiers, gives a verdict, and delivers a rewritten refutable thesis plus a test paragraph suitable for a column.",
+      "files": [],
+      "expectations": [
+        "Names the first speaker's move as denying the antecedent (否決前事的謬誤) and explains that assumption realism does not bear on whether the implication holds",
+        "Names the second speaker's OR-list as an unlimited prediction set (無限制 / disequilibrium) and explains why it cannot be refuted",
+        "Shows how to constrain the set: which substitute appears under which observable condition (e.g. resale cost, quality variability, tenure length)",
+        "States one concrete refuting observation",
+        "Runs all five disqualifiers by name",
+        "Gives an explicit verdict from the four categories",
+        "Provides a rewritten refutable thesis plus a test paragraph suitable for a column (Sharpen mode)",
+        "Does not endorse 'rent control is always bad'; keeps the verdict about testability",
+        "Uses Cheung's own devices where apt (petrol-station survivors, price-control substitutes, equilibrium as constraint)"
+      ]
+    }
+  ]
+}
